@@ -11,6 +11,8 @@ class BinaryTree{
 public:
     Node* root;
     BinaryTree();
+    // No debería necesitar el root en el insert
+    // Tu inserta acepta repetidos, no está mal pero hay elementos que no está insertando
     Node* insert(int data, Node* &node);
     Node* search(int data, Node* node);
     Node* minimum(Node* node);
@@ -25,6 +27,8 @@ public:
     Iterator end() {
         return Iterator(maximum(root));
     }
+
+    //Falta el destructor
 };
 void BinaryTree::delete_node(int value) {
     Node * node_ = search(value,this->root);
